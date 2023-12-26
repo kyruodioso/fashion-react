@@ -1,7 +1,10 @@
+import Carrousel from "./carrousel/Carrousel"
+
 const Home = () => {
   return (
     <>
       <main>
+        <Carrousel/>
         <section id="section1">
           <h2>Sección 1</h2>
         </section>
