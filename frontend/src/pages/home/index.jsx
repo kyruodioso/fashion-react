@@ -1,10 +1,12 @@
-import Carrousel from "./carrousel/Carrousel"
+import CarouselComponent from "./carrousel/Carrousel"
+
 
 const Home = () => {
   return (
     <>
+    
       <main>
-        <Carrousel/>
+        <CarouselComponent/>
         <section id="section1">
           <h2>Sección 1</h2>
         </section>

@@ -1,38 +1,42 @@
-import { useEffect, useRef } from 'react';
-import {register} from 'swiper/element/bundle';
+import { TECarousel, TECarouselItem } from "tw-elements-react";
 
-
-const Carrousel = () => {
-    const swiperRef = useRef(null);
-
-    useEffect(()=>{
-        register()
-
-  
-
-    //Object with parameters
-    const params={
-        slidesPerWiew:3,
-        breakpoints:{
-            768:{
-                slidesPerView:4,
-            }
-        }
-    }
-
-    //Assign it to swiper element
-    Object.assign(swiperRef.current, params);
-    //initialize swiper
-    swiperRef.current.initialize();
-},[]);
-
+export default function CarouselComponent() {
   return (
     <>
-    <swiper-container init="false" ref={swiperRef}>
-        ...
-    </swiper-container>
+      <TECarousel showControls showIndicators ride="carousel">
+        <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+          <TECarouselItem
+            itemID={1}
+            className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          >
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
+              className="block w-full"
+              alt="..."
+            />
+          </TECarouselItem>
+          <TECarouselItem
+            itemID={2}
+            className="relative float-left hidden -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          >
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+              className="block w-full"
+              alt="..."
+            />
+          </TECarouselItem>
+          <TECarouselItem
+            itemID={3}
+            className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          >
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
+              className="block w-full"
+              alt="..."
+            />
+          </TECarouselItem>
+        </div>
+      </TECarousel>
     </>
-  )
+  );
 }
-
-export default Carrousel
