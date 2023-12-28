@@ -1,17 +1,17 @@
 import TopPage from "../components/topPage/index.jsx"
 import Header from "../layout/header/index.jsx"
 import Footer from "../layout/footer/index.jsx"
-import Home from "../pages/home/index.jsx"
-
+import { Outlet } from "react-router-dom"
 const info = {
-  name: "Nombre Local"
+  name: 'Nombre Local',
+  uri:'/'
 }
 
 function Route() {
   return (
     <>
-      <Header info={info} />
-      <Home />
+      <Header {...info} />
+      <Outlet/>
       <TopPage />
       <Footer info={info} />
     </>

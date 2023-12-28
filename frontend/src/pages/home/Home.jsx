@@ -1,3 +1,4 @@
+import Novedades from "../novedades/Novedades"
 import CarouselComponent from "./carrousel/Carrousel"
 
 
@@ -8,7 +9,7 @@ const Home = () => {
       <main>
         <CarouselComponent/>
         <section id="section1">
-          <h2>Sección 1</h2>
+          <Novedades/>
         </section>
         <section id="section2">
           <h2>Sección 2</h2>
