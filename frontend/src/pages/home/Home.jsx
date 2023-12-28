@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
     
-      <main>
+      <main className="animate__animated animate__fadeIn">
         <CarouselComponent/>
         <section id="section1">
           {products?.map((product)=>(
