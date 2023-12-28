@@ -5,12 +5,12 @@ import "./index.css";
 
 import { route } from "./config";
 import { RouterProvider } from "react-router-dom";
-import ProducstProvider from "./context/ProductsContext";
+import ProductsProvider from "./context/ProductsContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ProducstProvider>
+    <ProductsProvider>
       <RouterProvider router={route} />
-    </ProducstProvider>
+    </ProductsProvider>
   </React.StrictMode>
 );

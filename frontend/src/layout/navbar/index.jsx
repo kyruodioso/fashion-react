@@ -1,13 +1,14 @@
 import { Disclosure} from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 
 const navigation = [
-  { name: 'Caballeros', href: '#', current: true },
-  { name: 'Damas', href: '#', current: false },
-  { name: 'Ninos', href: '#', current: false },
-  { name: 'Accesorios', href: '#', current: false },
-  { name: 'Novedades', href: '#', current: false },
+  { name: 'Caballeros', href: '/caballeros', current: true },
+  { name: 'Damas', href: '/damas', current: false },
+  { name: 'Ninos', href: '/ninos', current: false },
+  { name: 'Accesorios', href: '/accesorios', current: false },
+  { name: 'Novedades', href: '/novedades', current: false },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -33,9 +34,9 @@ export default function Navbar() {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
-                          <a
+                          <Link
                             key={item.name}
-                            href={item.href}
+                          to={item.href}
                             className={classNames(
                               item.current
                                 ? 'bg-gray-900 text-white'
@@ -45,7 +46,7 @@ export default function Navbar() {
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -79,8 +80,8 @@ export default function Navbar() {
                   {navigation.map((item) => (
                     <Disclosure.Button
                       key={item.name}
-                      as="a"
-                      href={item.href}
+                      as="Link"
+                      to={item.href}
                       className={classNames(
                         item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                         'block rounded-md px-3 py-2 text-base font-medium'

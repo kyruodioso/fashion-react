@@ -1,15 +1,24 @@
-import Novedades from "../novedades/Novedades"
+import { useLoaderData } from "react-router-dom"
 import CarouselComponent from "./carrousel/Carrousel"
 
 
 const Home = () => {
+
+  const {products}= useLoaderData()
+
+  console.log(products)
+
   return (
     <>
     
       <main>
         <CarouselComponent/>
         <section id="section1">
-          <Novedades/>
+          {products?.map((product)=>(
+            <div key={product.id}>
+            <h1>{product.title}</h1>
+            </div>
+          ))}
         </section>
         <section id="section2">
           <h2>Sección 2</h2>
