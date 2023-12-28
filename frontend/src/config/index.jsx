@@ -8,6 +8,7 @@ import Accesorios from "../pages/accesorios/Accesorios"
 
 import Route from "../routes/Route";
 import {useProducts} from "../services/useProducts"
+import { useProductJewelery} from "../services/useProductJewelery";
 
 export const route= createBrowserRouter([
     {
@@ -36,8 +37,8 @@ export const route= createBrowserRouter([
             },
             {
                 path:'/accesorios',
-                element: <Accesorios/>
-            }
+                element: <Accesorios/>,
+                loader: useProductJewelery       }
         ]
     }
 ])

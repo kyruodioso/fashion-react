@@ -5,3 +5,4 @@ export const useProducts=async()=>{
     const products = await res.json()
     return {products}
 }
+

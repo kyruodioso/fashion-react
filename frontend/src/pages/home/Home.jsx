@@ -6,7 +6,6 @@ const Home = () => {
 
   const {products}= useLoaderData()
 
-  console.log(products)
 
   return (
     <>
