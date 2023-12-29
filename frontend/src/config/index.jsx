@@ -5,6 +5,7 @@ import NotFound from "../pages/notFound/NotFound";
 import Mujeres from "../pages/mujeres/Mujeres"
 import Ninos from "../pages/ninos/Ninos";
 import Accesorios from "../pages/accesorios/Accesorios"
+import Novedades from "../pages/novedades/Novedades";
 
 import Route from "../routes/Route";
 import {useProducts} from "../services/useProducts"
@@ -38,7 +39,12 @@ export const route= createBrowserRouter([
             {
                 path:'/accesorios',
                 element: <Accesorios/>,
-                loader: useProductJewelery       }
+                loader: useProductJewelery       },
+                {
+                    path:'/novedades',
+                    element:<Novedades/>,
+                    loader:useProducts
+                },
         ]
     }
 ])
